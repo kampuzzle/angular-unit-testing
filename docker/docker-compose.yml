@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  docker:
+    container_name: 'angular-tests'
+    image: 'angular-tests'
+    build: .
+    command: bash -c "npm install && ng serve --host=0.0.0.0 --disable-host-check"
+    ports:
+      - "80:80"
+    volumes:
+      - ../:/angular-tests
